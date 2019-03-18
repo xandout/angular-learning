@@ -1,6 +1,13 @@
-This is a super simple intro project for learning Angular 7.  The end goal is to have an angular app that has the ability to create a "product" with a schema mathing that of `backup.json`.  I would like the the attributes onbject to be freeform so that a user can dynamically add and remove "attributes" from the product. 
+This is a super simple intro project for learning Angular 7. 
 
-Currently the UI can display the data and allow for the edit of "productid"(this should be disabled on edit but isn't yet), "name" and the "attributes".  Currently the go code defines an "Attribute" as `[]map[string]interface{}`, should probably be `map[string]interface{}` or something resembling a JSON `Object` like `{"string_key": "string"}`.  However inital tests show that the type of `value` could be expanded to hold arbitrary binary data such as images.  
+ The end goal is to have an angular app that has the ability to create a "product" with a schema matching that of `backup.json`. 
+ 
+ 
+  I would like the the attributes object to be freeform so that a user can dynamically add and remove "attributes" from the product. 
+
+Currently the UI can display the data and allow for the edit of "productid"(this should be disabled on edit but isn't yet), "name" and the "attributes".  
+
+Currently the go code defines an "Attribute" as `[]map[string]interface{}`, should probably be `map[string]interface{}` or something resembling a JSON `Object` like `{"string_key": "string"}`.  Inital tests show that the type of `value` could be expanded to hold arbitrary binary data such as images.  
 
 The "edit" feature uses the same API resource as creating a product and uses mongodb's "upsert" behavior to allow a single method to create and update a record.
 
