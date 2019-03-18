@@ -11,23 +11,33 @@ The "edit" feature uses the same API resource as creating a product and uses mon
 
 ### Mongo notes
 Database: progomon
+
 Collection: products
+
 Indices: unique on `productid`
 
 Not great design choices but functional
 
 ### Run the HTTP API
-`go run main.go 192.168.X.X:27017`  Will accept HTTP requests on `:8000`.  CORS is configured to allow anyone to request anything regardless of port and origin but then again, maybe only on my laptop.
+`go run main.go 192.168.X.X:27017`  
+
+Will accept HTTP requests on `:8000`.  
+
+CORS is configured to allow anyone to request anything regardless of port and origin but then again, maybe only on my laptop.
 
 
 ### Serve the angular app
 `ng serve --host 0.0.0.0`  or `ng build && cd dist/webui && python -m SimpleHTTPServer 8080`
 
 ### Add a product
-Click the plus in navbar, supply ID and Name.  If you want attributes, you need to add them via the DB.  The code to add form fields dynamically is not complete.
+Click the plus in navbar, supply ID and Name. 
+
+If you want attributes, you need to add them via the DB.  The code to add form fields dynamically is not complete.
 
 ### Delete a product
-Click the trashcan icon on a card.  There is no confirmation or dynamic updates to the UI.  Reload to see it go away.  Fortunate side effect is you can "undelete" before you reload by editing the deleted product and then clicking submit in the modal.
+Click the trashcan icon on a card.  
+
+There is no confirmation or dynamic updates to the UI.  Reload to see it go away.  Fortunate side effect is you can "undelete" before you reload by editing the deleted product and then clicking submit in the modal.
 
 #### Edit a product
 Click edit icon.  You cannot add attributes or delete them but you can edit them if they are present.
